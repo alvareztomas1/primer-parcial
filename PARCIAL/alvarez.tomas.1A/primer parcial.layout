@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="biblioteca\autores.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="biblioteca\funciones.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="201" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="biblioteca\prestamos.c" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4125" topLine="115" />
+		</Cursor>
+	</File>
+	<File name="biblioteca\funciones.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="biblioteca\prestamos.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2672" topLine="47" />
+		</Cursor>
+	</File>
+	<File name="biblioteca\libros.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="696" topLine="22" />
+		</Cursor>
+	</File>
+	<File name="biblioteca\socios.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="655" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7168" topLine="198" />
+		</Cursor>
+		<Folding>
+			<Collapse line="39" />
+			<Collapse line="80" />
+			<Collapse line="229" />
+			<Collapse line="278" />
+			<Collapse line="285" />
+			<Collapse line="307" />
+			<Collapse line="334" />
+			<Collapse line="428" />
+			<Collapse line="474" />
+		</Folding>
+	</File>
+	<File name="biblioteca\socios.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8531" topLine="191" />
+		</Cursor>
+	</File>
+	<File name="biblioteca\autores.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="697" topLine="23" />
+		</Cursor>
+	</File>
+	<File name="biblioteca\input.c" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="82" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="biblioteca\input.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="biblioteca\libros.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="104" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2531" topLine="82" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>
