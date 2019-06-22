@@ -94,20 +94,20 @@ void hardcode (eSocio soc[], int tamSoc, eAutor aut[], int tamAut, eLibros lib[]
     inicializarLibros(lib, tamLib);
     inicializarPrestamo(pres, tamPres);
 
-    /*eSocio lista[]=
+    eSocio lista[tamSoc];/*=
     {
-        {0, "Alvarez", "Tomas", 'm', "1140515642","tomasalvarez1@hotmail.com", {10,12,2011},0},
-        {1, "Caballero", "Julian", 'm', "1198724643","juliancaballero2@hotmail.com", {04,07,2013}, 0},
-        {2, "Cortes", "Florencia", 'f', "1103965201","cortesflorencia@hotmail.com", {21,03,2005}, 0},
-        {3, "Abila", "Ramon", 'm', "1133906453","abilaramon@hotmail.com", {17,03,2009}, 0},
-        {4, "Cortes", "Julieta", 'f', "1155402310", "julietacortes@hotmail.com", {12,10,2010}, 0},
-    };
+        {1, "Alvarez", "Tomas", 'm', "1140515642","tomasalvarez1@hotmail.com", {10,12,2011},0},
+        {2, "Caballero", "Julian", 'm', "1198724643","juliancaballero2@hotmail.com", {04,07,2013}, 0},
+        {3, "Cortes", "Florencia", 'f', "1103965201","cortesflorencia@hotmail.com", {21,03,2005}, 0},
+        {4, "Abila", "Ramon", 'm', "1133906453","abilaramon@hotmail.com", {17,03,2009}, 0},
+        {5, "Cortes", "Julieta", 'f', "1155402310", "julietacortes@hotmail.com", {12,10,2010}, 0},
+    };*/
 
     for (int i=0;i<5;i++)
     {
         soc[i]=lista[i];
     }
-*/
+
     eAutor autores[]=
     {
         {100, "Cortazar", "Julio", 0},
@@ -139,21 +139,21 @@ void hardcode (eSocio soc[], int tamSoc, eAutor aut[], int tamAut, eLibros lib[]
         lib[i]=libros[i];
     }
 
-  /* ePrestamo prestamos[]=
+    ePrestamo prestamos[tamPres];/*=
     {
-        {0, 1003, 2, {10,07,2018}, 0},
-        {1, 1003, 2, {10,07,2018}, 0},
-        {2, 1004, 3, {06,01,2019}, 0},
-        {3, 1003, 1, {13,10,2018}, 0},
-        {4, 1003, 1, {07,9,2018}, 0},
+        {1, 1003, 1, {10,07,2018}, 0},
+        {2, 1002, 1, {10,07,2018}, 0},
+        {3, 1004, 1, {06,01,2019}, 0},
+        {4, 1003, 1, {13,10,2018}, 0},
+        {5, 1003, 2, {07,9,2018}, 0},
 
-    };
+    };*/
 
     for (int i=0;i<5;i++)
     {
         pres[i]=prestamos[i];
     }
-    */
+
 
 }
 
@@ -216,7 +216,7 @@ void altaSocio (eSocio soc[], int tamSoc, int contador)
         getString(soc[espacioLibre].eMail, "Ingrese email: ", "No entra en el rango. Reingrese: ", 0, 31);
 
 
-        soc[espacioLibre].legajo=0;
+        soc[espacioLibre].legajo=1;
         soc[espacioLibre].legajo+=contador;
         soc[espacioLibre].itsEmpty=0;
 
@@ -255,7 +255,7 @@ void bajaSocio (eSocio soc[], int tamSoc)
 
                 if (respuesta=='s')
                 {
-                    soc[legajo].itsEmpty=-1;
+                    soc[busquedaLegajo].itsEmpty=-1;
                     printf("\nOperacion exitosa!!\n\n");
                 }
                 else
@@ -427,48 +427,53 @@ void modificarSocio (eSocio soc[], int tamSoc)
 
 void E_informarLibroMenosPrestado (eLibros lib[],int tamLib, ePrestamo pres[], int tamPres)
 {
+    int min = 0;
     int contador;
-    int min;
-    int idMin=0;
-    int flag=0;
+    int flag = 0;
 
     for (int i=0;i<tamLib;i++)
-     {
-         contador=0;
-
-         for (int j=0;j<tamPres;j++)
-         {
-             if (pres[j].idLibro==lib[i].idLibro && pres[j].itsEmpty==0 && lib[i].itsEmpty==0)
-             {
-                 contador++;
-                 if (contador<min || flag==0)
-                 {
-                     min=contador;
-                     idMin=pres[j].idLibro;
-                     flag++;
-
-
-                 }
+    {
+        contador = 0;
+        for (int j=0;j<tamPres;j++)
+        {
+            if (lib[i].idLibro==pres[j].idLibro && pres[j].itsEmpty==0 && lib[i].itsEmpty==0)
+            {
+                contador++;
             }
+        }
+
+        if (flag==0 && contador!=0)
+        {
+            min=contador;
+            flag=1;
+        }
+        else if (contador<=min && contador!=0)
+        {
+            min=contador;
         }
 
     }
 
-    if(idMin>0)
+    printf("\n  ID AUTOR | ID LIBRO   |  TITULO\n");
+    for (int i=0;i<tamLib;i++)
     {
-
-        printf("\nEl libro menos prestado es el %d con %d veces\n\n", idMin, min);
-
-
+        contador = 0;
+        for ( int j=0;j<tamPres;j++)
+        {
+            if (lib[i].idLibro==pres[j].idLibro && pres[j].itsEmpty==0 && lib[i].itsEmpty==0)
+            {
+                contador++;
+            }
+        }
+        if (contador == min)
+        {
+            printf("%-10d | %-10d | %-10s \n", lib[i].idAutor, lib[i].idLibro, lib[i].titulo);
+        }
     }
-    else
-    {
-        printf("\nNo hay nada que mostrar!!\n\n");
-    }
-
-
-
 }
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void F_informarSocioMasSolicito (eSocio soc[], int tamSoc, eLibros lib[],int tamLib, ePrestamo pres[], int tamPres)
@@ -494,7 +499,8 @@ void F_informarSocioMasSolicito (eSocio soc[], int tamSoc, eLibros lib[],int tam
                     if (soc[k].legajo==pres[j].legajoEmpleado  && soc[k].itsEmpty==0  && pres[j].itsEmpty==0  && lib[i].itsEmpty==0)
                     {
                          contador++;
-                         if (contador>max || flag==0)
+
+                         if (contador>=max || flag==0)
                          {
                              max=contador;
                              strcpy(apellido, soc[k].apellido);

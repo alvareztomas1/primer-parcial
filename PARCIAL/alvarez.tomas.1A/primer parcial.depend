@@ -391,3 +391,84 @@
 	"biblioteca/prestamos.h"
 	"biblioteca/input.h"
 
+1558547624 source:c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"funciones.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\funciones.h
+
+1558547624 source:c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"input.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\input.h
+
+1558547624 source:c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\libros.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"libros.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\libros.h
+	"socios.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\socios.h
+
+1558547624 source:c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\prestamos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"socios.h"
+	"funciones.h"
+	"libros.h"
+	"autores.h"
+	"prestamos.h"
+	"input.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\autores.h
+	"socios.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\prestamos.h
+	"socios.h"
+
+1558547624 source:c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca/socios.h"
+	"biblioteca/funciones.h"
+	"biblioteca/libros.h"
+	"biblioteca/autores.h"
+	"biblioteca/prestamos.h"
+	"biblioteca/input.h"
+
+1558547675 source:c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\autores.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"autores.h"
+
+1558631986 source:c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"socios.h"
+	"funciones.h"
+	"libros.h"
+	"autores.h"
+	"prestamos.h"
+	"input.h"
+

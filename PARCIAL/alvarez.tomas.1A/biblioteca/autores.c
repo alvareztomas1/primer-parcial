@@ -4,13 +4,10 @@
 #include <conio.h>
 #include <string.h>
 
-
 #ifndef autores_H_INCLUDED
 #define autores_H_INCLUDED
 #include "autores.h"
 #endif // autores_H_INCLUDED
-
-
 
 void inicializarAutores (eAutor aut[], int tamAut)
 {
