@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 #ifndef socios_H_INCLUDED
 #define socios_H_INCLUDED
 #include "biblioteca/socios.h"
@@ -33,7 +32,12 @@
 #include "biblioteca/input.h"
 #endif // input_H_INCLUDED
 
-#define TAM_SOC 10
+#ifndef prestamos_H_INCLUDED
+#define prestamos_H_INCLUDED
+#include "biblioteca/informes.h"
+#endif // informes_H_INCLUDED
+
+#define TAM_SOC 5
 #define TAM_LIBROS 20
 #define TAM_AUTORES 5
 #define TAM_PRSTAMO 50
@@ -121,29 +125,31 @@ int main()
 
                     case 2:
                         system("cls");
-                        F_informarSocioMasSolicito(lista, TAM_SOC, libros, TAM_LIBROS, prestamos, TAM_PRSTAMO);
+                        F_informarSocioMasSolicito(lista, TAM_SOC, prestamos, TAM_PRSTAMO);
                         system("pause");
                         break;
 
                     case 3:
                         system("cls");
-                        H_informarPrestamoSocioConFechaDeterminada(autores, TAM_AUTORES, prestamos, TAM_PRSTAMO, lista, TAM_SOC);
+                        H_informarPrestamoSocioConFechaDeterminada(prestamos, TAM_PRSTAMO, lista, TAM_SOC);
                         system("pause");
                         break;
+
                     case 4:
                         system("cls");
-                        G_informarPrestamoLibrosConFechaDeterminada(autores, TAM_AUTORES, prestamos, TAM_PRSTAMO, libros, TAM_LIBROS);
+                        G_informarPrestamoLibrosConFechaDeterminada(prestamos, TAM_PRSTAMO, libros, TAM_LIBROS);
                         system("pause");
                         break;
+
                     case 5:
                         system("cls");
-                        C_informarLibrosDeterminados(libros, TAM_LIBROS, autores, TAM_AUTORES, prestamos, TAM_PRSTAMO, lista, TAM_SOC);
+                        C_informarLibrosDeterminados(libros, TAM_LIBROS, prestamos, TAM_PRSTAMO, lista, TAM_SOC);
                         system("pause");
                         break;
 
                     case 6:
                         system("cls");
-                        D_informarSocioDeterminado (libros, TAM_LIBROS, autores, TAM_AUTORES, prestamos, TAM_PRSTAMO, lista, TAM_SOC);
+                        D_informarSocioDeterminado (libros, TAM_LIBROS,  prestamos, TAM_PRSTAMO, lista, TAM_SOC);
                         break;
 
                     case 7:
@@ -155,8 +161,22 @@ int main()
                     case 8:
                         system("cls");
                         J_sociosOrdenados (lista, TAM_SOC);
-
                         system("pause");
+                        break;
+
+                    case 9:
+                        system("cls");
+                        A_totalPromedio(lista, TAM_SOC, prestamos, TAM_PRSTAMO);
+                        system("pause");
+                        break;
+
+                    case 10:
+                        system("cls");
+                        B_diasQueNoSuperanPromedio(lista, TAM_SOC, prestamos, TAM_PRSTAMO);
+                        system("pause");
+                        break;
+
+                    case 11:
                         break;
 
                 }
@@ -167,7 +187,6 @@ int main()
                 system("cls");
                 validarDosChar(&respuesta, "Desea salir? Ingrese s/n: ","Opcion invalida. Reingrese: ", 'n', 's');
 
-                break;
                 if (respuesta=='s')
                 {
                     seguir='n';

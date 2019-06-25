@@ -459,7 +459,7 @@
 	<string.h>
 	"autores.h"
 
-1558631986 source:c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\socios.c
+1558631810 source:c:\users\alvar\desktop\primer-parcial\parcial\alvarez.tomas.1a\biblioteca\socios.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -471,4 +471,178 @@
 	"autores.h"
 	"prestamos.h"
 	"input.h"
+
+1558547675 source:c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\biblioteca\autores.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"autores.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\biblioteca\autores.h
+	"socios.h"
+
+1558635111 c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\biblioteca\socios.h
+
+1558547624 source:c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\biblioteca\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"funciones.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\biblioteca\funciones.h
+
+1558547624 source:c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\biblioteca\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"input.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\biblioteca\input.h
+
+1558547624 source:c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\biblioteca\libros.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"libros.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\biblioteca\libros.h
+	"socios.h"
+
+1558547624 source:c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\biblioteca\prestamos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"socios.h"
+	"funciones.h"
+	"libros.h"
+	"autores.h"
+	"prestamos.h"
+	"input.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\biblioteca\prestamos.h
+	"socios.h"
+
+1558635219 source:c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\biblioteca\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"socios.h"
+	"funciones.h"
+	"libros.h"
+	"autores.h"
+	"prestamos.h"
+	"input.h"
+
+1558635041 source:c:\users\alvar\desktop\primer-parcial\menos prestado hecho\parcial\alvarez.tomas.1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca/socios.h"
+	"biblioteca/funciones.h"
+	"biblioteca/libros.h"
+	"biblioteca/autores.h"
+	"biblioteca/prestamos.h"
+	"biblioteca/input.h"
+
+1558547675 source:c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\autores.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"autores.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\autores.h
+	"socios.h"
+
+1560609490 c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\socios.h
+
+1558547624 source:c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"funciones.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\funciones.h
+
+1558547624 source:c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"input.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\input.h
+
+1558547624 source:c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\libros.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"libros.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\libros.h
+	"socios.h"
+
+1561477216 source:c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\prestamos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"socios.h"
+	"funciones.h"
+	"libros.h"
+	"autores.h"
+	"prestamos.h"
+	"input.h"
+
+1558547624 c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\prestamos.h
+	"socios.h"
+
+1561477916 source:c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"socios.h"
+	"funciones.h"
+	"libros.h"
+	"autores.h"
+	"prestamos.h"
+	"input.h"
+
+1561476288 source:c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca/socios.h"
+	"biblioteca/funciones.h"
+	"biblioteca/libros.h"
+	"biblioteca/autores.h"
+	"biblioteca/prestamos.h"
+	"biblioteca/input.h"
+	"biblioteca/informes.h"
+
+1561478520 source:c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"socios.h"
+	"input.h"
+
+1561476288 c:\users\alvar\desktop\primer-parcial\parcial casi terminado\parcial\alvarez.tomas.1a\biblioteca\informes.h
 

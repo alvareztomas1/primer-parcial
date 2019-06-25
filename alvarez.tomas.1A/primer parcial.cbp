@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="biblioteca/funciones.h" />
+		<Unit filename="biblioteca/informes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="biblioteca/informes.h" />
 		<Unit filename="biblioteca/input.c">
 			<Option compilerVar="CC" />
 		</Unit>

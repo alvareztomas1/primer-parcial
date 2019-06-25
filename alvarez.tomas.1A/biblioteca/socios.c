@@ -70,8 +70,11 @@ int subMenu()
     printf("6-Libros libro por socio determinado\n");
     printf("7-Listar libros ordenados\n");
     printf("8-Listar socios ordenados\n");
+    printf("9-Listar cantidad de prestamos y promedio general\n");
+    printf("10-Cantidad de dias que superan el promedio\n");
+    printf("11-Salir\n");
 
-    getInt(&opcion, "Ingrese opcion: ", "No entra en el rango. Reinrese", 1, 8);
+    getInt(&opcion, "Ingrese opcion: ", "No entra en el rango. Reinrese: ", 1, 11);
 
     return opcion;
 }
@@ -101,12 +104,12 @@ void hardcode (eSocio soc[], int tamSoc, eAutor aut[], int tamAut, eLibros lib[]
         {3, "Cortes", "Florencia", 'f', "1103965201","cortesflorencia@hotmail.com", {21,03,2005}, 0},
         {4, "Abila", "Ramon", 'm', "1133906453","abilaramon@hotmail.com", {17,03,2009}, 0},
         {5, "Cortes", "Julieta", 'f', "1155402310", "julietacortes@hotmail.com", {12,10,2010}, 0},
-    };*/
+    };
 
     for (int i=0;i<5;i++)
     {
         soc[i]=lista[i];
-    }
+    }*/
 
     eAutor autores[]=
     {
@@ -141,18 +144,17 @@ void hardcode (eSocio soc[], int tamSoc, eAutor aut[], int tamAut, eLibros lib[]
 
     ePrestamo prestamos[tamPres];/*=
     {
-        {1, 1003, 1, {10,07,2018}, 0},
-        {2, 1002, 1, {10,07,2018}, 0},
-        {3, 1004, 1, {06,01,2019}, 0},
-        {4, 1003, 1, {13,10,2018}, 0},
-        {5, 1003, 2, {07,9,2018}, 0},
-
-    };*/
+        {1, 1003, 3, {11,01,2019}, 0},
+        {2, 1002, 1, {11,01,2019}, 0},
+        {3, 1004, 1, {11,01,2019}, 0},
+        {4, 1003, 4, {11,01,2019}, 0},
+        {5, 1003, 4, {12,01,2019}, 0},
+    };
 
     for (int i=0;i<5;i++)
     {
         pres[i]=prestamos[i];
-    }
+    }*/
 
 
 }
@@ -212,7 +214,7 @@ void altaSocio (eSocio soc[], int tamSoc, int contador)
         getString(soc[espacioLibre].telefono, "Ingrese telefono: ", "No entra en el rango. Reingrese: ", 0, 16);
         getInt(&soc[espacioLibre].fechaDeIngreso.dia, "Ingrese dia: ", "No entra en el rango. Reingrese: ", 0, 16);
         getInt(&soc[espacioLibre].fechaDeIngreso.mes, "Ingrese dia: ", "No entra en el rango. Reingrese: ", 1, 12);
-        getInt(&soc[espacioLibre].fechaDeIngreso.anio, "Ingrese dia: ", "No entra en el rango. Reingrese: ", 1900, 2019);
+        getInt(&soc[espacioLibre].fechaDeIngreso.anio, "(Entre 2000 y 2019)Ingrese dia: ", "No entra en el rango. Reingrese: ", 2000, 2019);
         getString(soc[espacioLibre].eMail, "Ingrese email: ", "No entra en el rango. Reingrese: ", 0, 31);
 
 
@@ -233,10 +235,12 @@ void bajaSocio (eSocio soc[], int tamSoc)
     char respuesta;
     int sinSocio=0;
 
+
     for (int i=0;i<tamSoc;i++)
     {
         if (soc[i].itsEmpty==0)
         {
+            mostrarSocios(soc, tamSoc);
             sinSocio++;
             printf("Ingrese legajo: ");
             scanf("%d", &legajo);
@@ -257,10 +261,14 @@ void bajaSocio (eSocio soc[], int tamSoc)
                 {
                     soc[busquedaLegajo].itsEmpty=-1;
                     printf("\nOperacion exitosa!!\n\n");
+                    break;
+
                 }
                 else
                 {
                     printf("\nOperacion cancelada!!\n\n");
+                    break;
+
                 }
             }
         }
@@ -339,10 +347,12 @@ void modificarSocio (eSocio soc[], int tamSoc)
     int opcionM;
     int sinSocio=0;
 
+
     for (int i=0;i<tamSoc;i++)
     {
         if (soc[i].itsEmpty==0)
         {
+            mostrarSocios(soc, tamSoc);
             sinSocio++;
             printf("Ingrese legajo: ");
             scanf("%d", &legajo);
@@ -375,27 +385,27 @@ void modificarSocio (eSocio soc[], int tamSoc)
                     {
                         case 1:
                             getString(soc[busquedaLegajo].apellido, "Ingrese apellido: ", "Supero los caracteres. Reingrese: ", 0, 51);
-                            printf("\nOperacion exitosa!!\n\n");
+
                             break;
 
                         case 2:
                             getString(soc[busquedaLegajo].nombre, "Ingrese nombre: ", "Supero los caracteres. Reingrese: ", 0, 51);
-                            printf("\nOperacion exitosa!!\n\n");
+
                             break;
 
                         case 3:
                             validarDosChar(&soc[busquedaLegajo].sexo, "Ingrese sexo: ", "Solo m o f. Reingrese: ", 'f', 'm');
-                            printf("\nOperacion exitosa!!\n\n");
+
                             break;
 
                         case 4:
                             getString(soc[busquedaLegajo].telefono, "Ingrese telefono: ", "No entra en el rango. Reingrese: ", 0, 16);
-                            printf("\nOperacion exitosa!!\n\n");
+
                             break;
 
                         case 5:
                             getString(soc[busquedaLegajo].eMail, "Ingrese email: ", "No entra en el rango. Reingrese: ", 1, 31);
-                            printf("\nOperacion exitosa!!\n\n");
+
                             break;
                         case 6:
                             break;
@@ -407,10 +417,14 @@ void modificarSocio (eSocio soc[], int tamSoc)
 
                     }
 
+                    printf("Operacion exitosa!!\n\n");
+                    break;
                 }
                 else
                 {
                     printf("\nOperacion cancelada!!\n\n");
+                    break;
+
                 }
             }
         }
@@ -424,305 +438,3 @@ void modificarSocio (eSocio soc[], int tamSoc)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-void E_informarLibroMenosPrestado (eLibros lib[],int tamLib, ePrestamo pres[], int tamPres)
-{
-    int min = 0;
-    int contador;
-    int flag = 0;
-
-    for (int i=0;i<tamLib;i++)
-    {
-        contador = 0;
-        for (int j=0;j<tamPres;j++)
-        {
-            if (lib[i].idLibro==pres[j].idLibro && pres[j].itsEmpty==0 && lib[i].itsEmpty==0)
-            {
-                contador++;
-            }
-        }
-
-        if (flag==0 && contador!=0)
-        {
-            min=contador;
-            flag=1;
-        }
-        else if (contador<=min && contador!=0)
-        {
-            min=contador;
-        }
-
-    }
-
-    printf("\n  ID AUTOR | ID LIBRO   |  TITULO\n");
-    for (int i=0;i<tamLib;i++)
-    {
-        contador = 0;
-        for ( int j=0;j<tamPres;j++)
-        {
-            if (lib[i].idLibro==pres[j].idLibro && pres[j].itsEmpty==0 && lib[i].itsEmpty==0)
-            {
-                contador++;
-            }
-        }
-        if (contador == min)
-        {
-            printf("%-10d | %-10d | %-10s \n", lib[i].idAutor, lib[i].idLibro, lib[i].titulo);
-        }
-    }
-}
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-void F_informarSocioMasSolicito (eSocio soc[], int tamSoc, eLibros lib[],int tamLib, ePrestamo pres[], int tamPres)
-{
-    int contador;
-    int max=0;
-    char apellido[31];
-    char nombre[31];
-    int flag=0;
-    int legajo=-1;
-
-    for (int i=0;i<tamLib;i++)
-    {
-        contador=0;
-        for (int j=0;j<tamPres;j++)
-        {
-            if (pres[j].idLibro==lib[i].idLibro)
-            {
-
-                for (int k=0;k<tamSoc;k++)
-                {
-
-                    if (soc[k].legajo==pres[j].legajoEmpleado  && soc[k].itsEmpty==0  && pres[j].itsEmpty==0  && lib[i].itsEmpty==0)
-                    {
-                         contador++;
-
-                         if (contador>=max || flag==0)
-                         {
-                             max=contador;
-                             strcpy(apellido, soc[k].apellido);
-                             strcpy(nombre, soc[k].nombre);
-                             legajo=soc[k].legajo;
-                             flag++;
-
-                         }
-                    }
-                }
-            }
-        }
-    }
-
-    if (legajo==-1)
-    {
-        printf("\nNo hay nada que listar!!\n\n");
-    }
-   else
-    {
-
-        printf("El socio es %d-%s %s\n", legajo, apellido, nombre);
-
-    }
-
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-void H_informarPrestamoSocioConFechaDeterminada (eAutor aut[],int tamAut,ePrestamo pres[], int tamPres, eSocio soc[], int tamSoc)
-{
-    int contador=0;
-    int legajo;
-    int indice;
-    int dia, mes, anio;
-
-
-    getInt (&dia, "Ingrese dia: ", "No entra en el rango. Reingrese: ", 1, 31);
-    getInt (&mes, "Ingrese mes: ", "No entra en el rango. Reingrese: ", 1, 12);
-    getInt (&anio, "Ingrese anio: ", "No entra en el rango. Reingrese: ", 2018, 2019);
-
-
-    for (int i=0;i<tamSoc;i++)
-    {
-        for (int j=0;j<tamPres;j++)
-        {
-            if (pres[j].fechaDePrestamo.dia==dia && pres[j].fechaDePrestamo.mes==mes && pres[j].fechaDePrestamo.anio && soc[i].legajo==pres[j].legajoEmpleado)
-            {
-                printf("\n ID  PRESTAMO  LEGAJO  APELLIDO  NOMBRE  ID LIBRO  FECHA \n");
-                printf("    %04d       %04d     %s  %s     %d   %02d/%02d/%4d\n\n", pres[j].idPrestamo, pres[j].legajoEmpleado, soc[i].apellido, soc[i].nombre,  pres[j].idLibro, pres[j].fechaDePrestamo.dia, pres[j].fechaDePrestamo.mes, pres[j].fechaDePrestamo.anio);
-                contador++;
-            }
-        }
-    }
-
-    if (contador==0)
-    {
-        printf("\nNo hay nada que listar!!\n\n");
-    }
-
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-void G_informarPrestamoLibrosConFechaDeterminada (eAutor aut[],int tamAut,ePrestamo pres[], int tamPres, eLibros lib[], int tamLib)
-{
-    int contador=0;
-    int legajo;
-    int indice;
-    int dia, mes, anio;
-
-
-    getInt (&dia, "Ingrese dia: ", "No entra en el rango. Reingrese: ", 1, 31);
-    getInt (&mes, "Ingrese mes: ", "No entra en el rango. Reingrese: ", 1, 12);
-    getInt (&anio, "Ingrese anio: ", "No entra en el rango. Reingrese: ", 2018, 2019);
-
-
-    for (int i=0;i<tamLib;i++)
-    {
-        for (int j=0;j<tamPres;j++)
-        {
-            if (pres[j].fechaDePrestamo.dia==dia && pres[j].fechaDePrestamo.mes==mes && pres[j].fechaDePrestamo.anio==anio && lib[i].itsEmpty==0 && lib[i].idLibro==pres[j].idLibro)
-            {
-                printf("\n Codigo libro   Titulo    Fecha\n");
-                printf("    %04d  %s %02d/%02d/%4d\n\n", pres[j].idLibro, lib[i].titulo, pres[j].fechaDePrestamo.dia, pres[j].fechaDePrestamo.mes, pres[j].fechaDePrestamo.anio);
-                contador++;
-            }
-        }
-    }
-
-    if (contador==0)
-    {
-        printf("\nNo hay nada que listar!!\n\n");
-    }
-
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-void C_informarLibrosDeterminados (eLibros lib[],int tamLib,eAutor aut[],int tamAut,ePrestamo pres[], int tamPres, eSocio soc[], int tamSoc)
-{
-    int contador = 0;
-    int legajo;
-    int indice;
-    int opcion;
-
-    mostrarLibros(lib, tamLib);
-    getInt(&opcion, "Ingrese libro: ", "No entra en el rango. Reingrese: ", 1000, 1007);
-
-    {
-        printf("\n IDPRESTAMO  LEGAJO   APELLIDO  NOMBRE  ID LIBRO  FECHA \n");
-
-        for (int j=0;j<tamSoc;j++)
-        {
-            for(int i=0;i<tamPres;i++)
-            {
-                if(pres[i].itsEmpty==0 && pres[i].idLibro==opcion && soc[j].itsEmpty==0 && soc[j].legajo==pres[i].legajoEmpleado)
-                {
-                    printf("%    04d           %d      %s  %s  %d   %02d/%02d/%4d\n\n", pres[i].idPrestamo, pres[i].legajoEmpleado, soc[j].apellido, soc[j].nombre, pres[i].idLibro, pres[i].fechaDePrestamo.dia, pres[i].fechaDePrestamo.mes, pres[i].fechaDePrestamo.anio);
-                    contador++;
-                }
-            }
-        }
-
-
-    }
-
-    if(contador==0)
-    {
-        printf("\nEste libro no tiene prestamos");
-    }
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-void D_informarSocioDeterminado (eLibros lib[],int tamLib,eAutor aut[],int tamAut,ePrestamo pres[], int tamPres, eSocio soc[], int tamSoc)
-{
-    int contador = 0;
-    int legajo;
-    int indice;
-
-    printf("Ingrese legajo: ");
-    scanf("%d", &legajo);
-
-    indice=buscarLegajo(soc, tamSoc, legajo);
-
-    if(indice==-2)
-    {
-        printf("\nNo se encuentra su legajo!!\n\n");
-    }
-    else
-    {
-        printf("\n PRESTAMO  LEGAJO  TITULO    ID LIBRO      FECHA \n");
-
-        for (int i=0;i<tamLib;i++)
-        {
-             for(int j=0;j<tamPres;j++)
-            {
-                if(pres[j].itsEmpty==0 && pres[j].legajoEmpleado==legajo && lib[i].idLibro==pres[j].idLibro)
-                {
-                    printf("    %d       %d      %s   %d      %02d/%02d/%4d\n\n", pres[j].idPrestamo, pres[j].legajoEmpleado, lib[i].titulo, pres[j].idLibro, pres[j].fechaDePrestamo.dia, pres[j].fechaDePrestamo.mes, pres[j].fechaDePrestamo.anio);
-                    contador++;
-                }
-
-            }
-        }
-    }
-
-    if(contador==0)
-    {
-        printf("\nEste socio no tiene prestamos\n");
-    }
-
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-void I_librosOrdenados (eLibros lib[], int tamLib)
-{
-    eLibros aux;
-    int noEstaOrdenado=1;
-
-
-    while(noEstaOrdenado==1)
-    {
-        noEstaOrdenado=0;
-        for (int i=0;i<tamLib-1;i++)
-        {
-            for (int j=i+1;j<tamLib;j++)
-            {
-                if (stricmp(lib[i].titulo, lib[j].titulo)<0)
-                {
-                    aux=lib[i];
-                    lib[i]=lib[j];
-                    lib[j]=aux;
-                    noEstaOrdenado=1;
-                }
-            }
-        }
-    }
-    mostrarLibros(lib, tamLib);
-
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-void J_sociosOrdenados (eSocio soc[], int tamSoc)
-{
-    eSocio aux;
-    int j;
-
-    for (int i=1;i<tamSoc;i++)
-    {
-        aux=soc[i];
-        j=i-1;
-
-        while (j>=0 && stricmp(aux.apellido, soc[j].apellido)<0)
-        {
-            soc[j+1] = soc[j];
-            j--;
-        }
-        soc[j+1]=aux;
-    }
-    mostrarSocios(soc, tamSoc);
-}

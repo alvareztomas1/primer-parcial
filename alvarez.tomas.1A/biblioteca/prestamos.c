@@ -81,12 +81,14 @@ void altaPrestamo (ePrestamo pres[], int tamPres, eSocio soc[], int tamSoc, eLib
     }
     else
     {
+
         for (int i=0;i<tamSoc;i++)
         {
             if (soc[i].itsEmpty==0)
             {
-                sinSocio++;
                 mostrarSocios(soc, tamSoc);
+                sinSocio++;
+
                 printf("\nIngrese legajo: ");
                 scanf("%d", &legajo);
 
@@ -118,18 +120,20 @@ void altaPrestamo (ePrestamo pres[], int tamPres, eSocio soc[], int tamSoc, eLib
 
 
                         pres[espacioLibre].itsEmpty=0;
-                        pres[espacioLibre].idPrestamo=0;
+                        pres[espacioLibre].idPrestamo=1;
                         pres[espacioLibre].idPrestamo+=contador;
                         pres[espacioLibre].legajoEmpleado=legajo;
 
 
                         printf("\nOperacion exitosa!!\n\n");
+                        break;
 
 
                     }
                     else
                     {
                         printf("\nOperacion cancelada!!\n\n");
+                        break;
                     }
 
                 }
